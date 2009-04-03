@@ -4,6 +4,8 @@ import sys
 GOOGLE_CALENDAR_USER = ''
 GOOGLE_CALENDAR_PASSWORD = ''
 
+# Also be sure to edit lines 27 and 36 with the right information for your calendar account
+
 TEMPLATE_FILE = 'cal_template.htm'
 OUTPUT_FILE = 'cal_output.htm'
 NUM_RESULTS = 6
