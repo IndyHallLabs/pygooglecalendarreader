@@ -1,6 +1,5 @@
 #!/usr/local/bin/python
 import sys
-sys.path.append('pull_jobs');
 
 GOOGLE_CALENDAR_USER = ''
 GOOGLE_CALENDAR_PASSWORD = ''
@@ -21,14 +20,18 @@ def getEvents():
     calendar_service = CalendarService()
     calendar_service.email = GOOGLE_CALENDAR_USER
     calendar_service.password = GOOGLE_CALENDAR_PASSWORD
-    calendar_service.source = 'org_indyhall_www'
+
+    # Fill out the next line
+    calendar_service.source = ''
+    
     calendar_service.ProgrammaticLogin()
     
     # Create query
     now = datetime.now()
     later = now + timedelta(days=60)
     
-    query = CalendarEventQuery('round3media.com_91rranvg84v32rgro00n9hf5go@group.calendar.google.com', 'private', 'full')
+    # Provide the first arguement here
+    query = CalendarEventQuery('', 'private', 'full')
     query.start_min = '%i-%02i-%02i' % (now.year, now.month, now.day)
     query.start_max = '%i-%02i-%02i' % (later.year, later.month, later.day)
     feed = calendar_service.CalendarQuery(query)
